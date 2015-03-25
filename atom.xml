@@ -4,7 +4,7 @@
   <title><![CDATA[JCU Robo Club]]></title>
   <link href="http://jcuroboclub.github.io/atom.xml" rel="self"/>
   <link href="http://jcuroboclub.github.io/"/>
-  <updated>2015-03-25T19:42:52+10:00</updated>
+  <updated>2015-03-25T20:05:11+10:00</updated>
   <id>http://jcuroboclub.github.io/</id>
   <author>
     <name><![CDATA[JCU Robo Club]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[RQRoS]]></title>
-    <link href="http://jcuroboclub.github.io/blog/2015/03/25/rqros/"/>
+    <title type="html"><![CDATA[NQRoS]]></title>
+    <link href="http://jcuroboclub.github.io/blog/2015/03/25/nqros/"/>
     <updated>2015-03-25T13:01:39+10:00</updated>
-    <id>http://jcuroboclub.github.io/blog/2015/03/25/rqros</id>
+    <id>http://jcuroboclub.github.io/blog/2015/03/25/nqros</id>
     <content type="html"><![CDATA[<p>North Queensland Robotic Sumo Competition</p>
 ]]></content>
   </entry>
