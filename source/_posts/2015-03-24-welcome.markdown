@@ -1,0 +1,11 @@
+---
+layout: post
+title: "Welcome"
+date: 2015-03-24 23:15:48 +1000
+comments: true
+categories: 
+---
+
+Welcome to James Cook University's Robo Club, run by the IEEE Student Branch.
+<!--more-->
+Watch this space for more information.
