@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "RQRoS"
+title: "NQRoS"
 date: 2015-03-25 13:01:39 +1000
 comments: true
 categories: 
