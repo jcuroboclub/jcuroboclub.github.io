@@ -4,7 +4,7 @@
   <title><![CDATA[JCU Robo Club]]></title>
   <link href="http://jcuroboclub.github.io/atom.xml" rel="self"/>
   <link href="http://jcuroboclub.github.io/"/>
-  <updated>2015-03-25T11:23:31+10:00</updated>
+  <updated>2015-03-25T11:30:32+10:00</updated>
   <id>http://jcuroboclub.github.io/</id>
   <author>
     <name><![CDATA[JCU Robo Club]]></name>
@@ -19,6 +19,11 @@
     <updated>2015-03-24T23:15:48+10:00</updated>
     <id>http://jcuroboclub.github.io/blog/2015/03/24/welcome</id>
     <content type="html"><![CDATA[<p>Welcome to James Cook University&rsquo;s Robo Club, run by the IEEE Student Branch.</p>
+
+<!--more-->
+
+
+<p>Blah</p>
 ]]></content>
   </entry>
   
