@@ -92,7 +92,48 @@ The Raspberry Pi can run various operating systems, most of which are some form 
 
 <p><img src="http://jcuroboclub.github.io/images/loginpi.png" alt="Raspberry Pi Login" /></p>
 
-<p>Now to get familiar with some of the commands. You have logged in, and you are currently in the &ldquo;pi&rdquo; user&rsquo;s home directory. Type in <code>pwd</code> (print working directory) and hit enter to see the path of your current directory. Also try entering <code>ls</code> (list) to see the contents of the current directory. I have created a subdirectory here called <code>PiSession</code>, swap into it by typing <code>cd PiSession</code> (change directory). Now try creating your own folder</p>
+<p>Now to get familiar with some of the commands. You have logged in, and you are currently in the &ldquo;pi&rdquo; user&rsquo;s home directory. Type in <code>pwd</code> (print working directory) and hit enter to see the path of your current directory. Also try entering <code>ls</code> (list) to see the contents of the current directory. I have created a subdirectory here called <code>PiSession</code>, swap into it by typing <code>cd PiSession</code> (change directory), note that in Linux the case of you file and fodler names matters! Use <code>pwd</code> to double check you are in the <code>PiSesion</code> directory. Now try creating your own folder with your name by typing <code>mkdir &lt;yourname&gt;</code> (make directory).</p>
+
+<p>You can then swap into your own directory using <code>cd &lt;yourname&gt;</code>, and create files using <code>touch &lt;filename&gt;</code>. Try typing <code>touch info.txt</code>. You can then edit this file using a tool called <a href="http://www.nano-editor.org/" title="GNU nano editor">nano</a> <code>nano info.txt</code>. Enter some information, then hit ctrl-x to exit. You will be asked if you wish to save (y/n). If we want to swap back out of the directory we are in, we can use <code>cd ..</code> to move up one level, <code>cd ../..</code> to move up two levels, or <code>cd ../../..</code> to move up three levels, etc.</p>
+
+<p>Lets review what we have learned so far:</p>
+
+<ul>
+<li>Print the working directory <code>pwd</code></li>
+<li>List the current directory&rsquo;s content <code>ls</code></li>
+<li>Change into a directory <code>cd &lt;dir&gt;</code></li>
+<li>Change up a directory <code>cd ..</code></li>
+<li>Create an empty file <code>touch &lt;filename&gt;</code></li>
+<li>Modify a file using nano <code>nano &lt;filename&gt;</code></li>
+</ul>
+
+
+<p>I have installed on my Raspberry Pi a program called <a href="http://www.musicpd.org/clients/mpc/" title="MPC page on MPD website">mpc</a>, Music Player Controller, which I have configured to play Triple J. Try typing <code>mpc play</code> or <code>mpc stop</code>, or even <code>mpc volume 80</code>. <em>Optional: You can find out more about mpc by typing <code>man mpc</code>, or indeed about most commands using the manual command, <code>man</code>.</em> I also have a command line Twitter program to monitor what Triple J is playing now, enter <code>t timeline</code> to see what&rsquo;s on.</p>
+
+<p>Finally, try typing <code>python</code> to open the <a href="http://python.org/" title="Python Homepage">Python</a> <a href="http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop" title="REPL on Wikipedia">REPL</a>, which allows you to freely play with the Python language. Try typing in some maths:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python
+&gt;&gt;&gt; 1+1
+&gt;&gt;&gt; 2</code></pre></div>
+
+
+<p>Now use ctrl-d to log out of Python. Be careful, if you hit it twice you may log out of your SSH connection.</p>
+
+<p>We will now try to do some basic output using Python. On the Pi, this is called GPIO, General Purpose Input/Output. <em>Advanced: Because using input and output could potentially be a security issue, we need to run the commands with privileged access, the same as running as administrator in windows. We do this using the <code>sudo</code> command, meaning super-user do.</em></p>
+
+<p>Type in <code>sudo python</code> (you may have to reenter your password).</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">RPi.GPIO</span> <span class="kn">as</span> <span class="nn">GPIO</span> <span class="c"># load the Raspberry Pi GPIO</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span><span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span><span class="p">)</span> <span class="c"># Set which pin naming convention to use</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="o">&lt;</span><span class="n">pin</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span> <span class="c"># Set &lt;pin&gt; as an output</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="o">&lt;</span><span class="n">pin</span><span class="o">&gt;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span> <span class="c"># Set &lt;pin&gt; high, use 0 for low</span></code></pre></div>
+
+
+<p>I have connected LEDs to pins 9, 10, 22, 27, 17, 4, 3, 2 from left to right (sorry, the Pi pin numbering is funny, so so is my ordering).</p>
+
+<p>Those wanting to go further should consider purchasing a Raspberry Pi. The units are very cheap, at $35 for a Raspberry Pi B+, or $45 for a Raspberry Pi 2. Of course, you will still need an SD card, keyboard, monitor, HDMI cable, USB micro cable, and a case, but many of these items you may already have lying around. The system itself is quite simple to learn, due to an abundance of material. Check out <a href="https://learn.adafruit.com/category/raspberry-pi" title="Learn Raspberry Pi at Adafruit">Adafruit&rsquo;s guides</a>.</p>
+
+<p>That is about it for this session. We have seen how to connect to the Pi, how to navigate through the file system using command line, and how to run programs. These are the basic tools required to get started with the Pi. of course, if you have your own Pi, you can hook up a keyboard and monitor and connect directly. You can even connect a mouse and use a regular desktop environment. However, harnessing the power of the command-line unlocks the power of the Pi.</p>
 </div>
 
 
