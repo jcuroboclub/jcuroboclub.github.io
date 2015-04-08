@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>JCU Robo Club</title>
+  <title>Learn to Bake: A Raspberry Pi Intro. - JCU Robo Club</title>
   <meta name="author" content="JCU Robo Club">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://jcuroboclub.github.io/">
+  <link rel="canonical" href="http://jcuroboclub.github.io/blog/2015/04/08/learn-to-bake-a-raspberry-pi-intro/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
    <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -48,15 +48,12 @@
 </header>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2015/04/08/learn-to-bake-a-raspberry-pi-intro/">Learn to Bake: A Raspberry Pi Intro.</a></h1>
+      <h1 class="entry-title">Learn to Bake: A Raspberry Pi Intro.</h1>
     
     
       <p class="meta">
@@ -79,73 +76,34 @@
   </header>
 
 
-  <div class="entry-content"><p>A <a href="http://www.raspberrypi.org/" title="Raspberry Pi Homepage">Raspberry Pi</a> is what&rsquo;s called a SoC, a System on a Chip. This means it is an entire computer system on a single board, about the size of a credit card.
+<div class="entry-content"><p>A <a href="http://www.raspberrypi.org/" title="Raspberry Pi Homepage">Raspberry Pi</a> is what&rsquo;s called a SoC, a System on a Chip. This means it is an entire computer system on a single board, about the size of a credit card.
 The Raspberry Pi can run various operating systems, most of which are some form of Linux distribution. The OS we will be using is called <a href="http://www.raspbian.org/" title="Raspbian Homepage">Raspbian</a>, and is a Debian derivative.</p>
 
 <p><img src="http://jcuroboclub.github.io/images/Raspberry_Pi_-_Model_A.jpg" alt="Raspberry Pi Model A" /></p>
 
+<!--more-->
+
+
+<p>Today&rsquo;s session will look at connecting to the Raspberry Pi using a protocol called <a href="http://en.wikipedia.org/wiki/Secure_Shell" title="SSH on Wikipedia">Secure Shell or SSH</a>, which will allow us to connect to the Raspberry Pi using a PC or Mac. We could also plug a USB keyboard and mouse directly into the Raspberry Pi, along with a monitor and use it like a regular computer, but that&rsquo;s a little harder with a full class.</p>
+
+<p>The first thing you will have to do is download <a href="http://www.putty.org/" title="PuTTY Homepage">PuTTY</a> (if you are on Windows, otherwise on Mac and Linux you already hace the ssh command). This will allow you to SSH, or connect, to the Raspberry Pi over command-line. Using the command-line can be a little scary at first, but it is a very powerful tool, and today will be mostly about getting comfortable with it. There are plenty of average-looking guides to shell, Unix, command-line and bash out there, <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/unixintro.html" title="Surrey EE Unix Intro">here</a> is one of them, <a href="http://linuxcommand.org/learning_the_shell.php" title="LinuxCommand - Learning the Shell">here</a> is another.</p>
+
+<p>Once you have PuTTY, run it, and enter the IP address of the Raspberry Pi (hopefully I have written it on the whiteboard by now). You will be prompted for a username (pi) and a password (raspberry). Hooray! You have connected to your first Raspberry Pi.</p>
+
+<p><img src="http://jcuroboclub.github.io/images/loginpi.png" alt="Raspberry Pi Login" /></p>
+
+<p>Now to get familiar with some of the commands. You have logged in, and you are currently in the &ldquo;pi&rdquo; user&rsquo;s home directory. Type in <code>pwd</code> (print working directory) and hit enter to see the path of your current directory. Also try entering <code>ls</code> (list) to see the contents of the current directory. I have created a subdirectory here called <code>PiSession</code>, swap into it by typing <code>cd PiSession</code> (change directory). Now try creating your own folder</p>
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2015/04/08/learn-to-bake-a-raspberry-pi-intro/">Read on &rarr;</a>
-    </footer>
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/03/25/nqros/">NQRoS</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Ashley Gillman</span></span>
 
-<time datetime="2015-03-25T13:01:39+10:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>The North Queensland Robotic Sumo (NQRoS) competition is a student robotics competition aimed to foster student involvement in robotics, and intelligent systems. The competition focuses on rewarding innovation in sensing and intelligence. Held in Townsville, the competition is not limited to North Queenslanders and aims to involve entrants from across Australia and further.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2015/03/25/nqros/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/03/24/welcome/">Welcome</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -157,32 +115,34 @@ The Raspberry Pi can run various operating systems, most of which are some form 
   
 
 
-<time datetime="2015-03-24T23:15:48+10:00" pubdate data-updated="true"></time>
-        
-      </p>
+<time datetime="2015-04-08T21:43:01+10:00" pubdate data-updated="true"></time>
+      
+
+
+    </p>
     
-  </header>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jcuroboclub.github.io/blog/2015/04/08/learn-to-bake-a-raspberry-pi-intro/" data-via="jcuroboclub" data-counturl="http://jcuroboclub.github.io/blog/2015/04/08/learn-to-bake-a-raspberry-pi-intro/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
 
-
-  <div class="entry-content"><p>Welcome to James Cook University&rsquo;s Robo Club, run by the IEEE Student Branch.</p>
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/03/25/nqros/" title="Previous Post: NQRoS">&laquo; NQRoS</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2015/03/24/welcome/">Read on &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives/"> Archives </a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section id="titles">
@@ -291,6 +251,7 @@ The Raspberry Pi can run various operating systems, most of which are some form 
 
   
 </aside>
+
 
     </div>
   </div>
