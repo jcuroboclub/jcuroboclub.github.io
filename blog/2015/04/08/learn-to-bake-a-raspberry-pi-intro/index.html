@@ -92,9 +92,33 @@ The Raspberry Pi can run various operating systems, most of which are some form 
 
 <p><img src="http://jcuroboclub.github.io/images/loginpi.png" alt="Raspberry Pi Login" /></p>
 
-<p>Now to get familiar with some of the commands. You have logged in, and you are currently in the &ldquo;pi&rdquo; user&rsquo;s home directory. Type in <code>pwd</code> (print working directory) and hit enter to see the path of your current directory. Also try entering <code>ls</code> (list) to see the contents of the current directory. I have created a subdirectory here called <code>PiSession</code>, swap into it by typing <code>cd PiSession</code> (change directory), note that in Linux the case of you file and fodler names matters! Use <code>pwd</code> to double check you are in the <code>PiSesion</code> directory. Now try creating your own folder with your name by typing <code>mkdir &lt;yourname&gt;</code> (make directory).</p>
+<p>Now to get familiar with some of the commands. You have logged in, and you are currently in the &ldquo;pi&rdquo; user&rsquo;s home directory. Type in <code>pwd</code> (print working directory) and hit enter to see the path of your current directory. Also try entering <code>ls</code> (list) to see the contents of the current directory. I have created a subdirectory here called <code>PiSession</code>, swap into it by typing <code>cd PiSession</code> (change directory), note that in Linux the case of you file and folder names matters! Use <code>pwd</code> to double check you are in the <code>PiSesion</code> directory. Now try creating your own folder with your name by typing <code>mkdir &lt;yourname&gt;</code> (make directory).</p>
 
 <p>You can then swap into your own directory using <code>cd &lt;yourname&gt;</code>, and create files using <code>touch &lt;filename&gt;</code>. Try typing <code>touch info.txt</code>. You can then edit this file using a tool called <a href="http://www.nano-editor.org/" title="GNU nano editor">nano</a> <code>nano info.txt</code>. Enter some information, then hit ctrl-x to exit. You will be asked if you wish to save (y/n). If we want to swap back out of the directory we are in, we can use <code>cd ..</code> to move up one level, <code>cd ../..</code> to move up two levels, or <code>cd ../../..</code> to move up three levels, etc.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">pi@gillypi ~ <span class="nv">$ </span><span class="nb">pwd</span>
+/home/pi
+pi@gillypi ~ <span class="nv">$ </span>ls
+Desktop    numpy-1.6.1         ocr_pi.png  Project-Mario  rtl-sdr
+Documents  numpy-1.6.1.tar.gz  PiSession   python_games   Scratch
+pi@gillypi ~ <span class="nv">$ </span><span class="nb">cd </span>PiSession
+pi@gillypi ~/PiSession <span class="nv">$ </span><span class="nb">pwd</span>
+/home/pi/PiSession
+pi@gillypi ~/PiSession <span class="nv">$ </span>mkdir gilly
+pi@gillypi ~/PiSession <span class="nv">$ </span>ls
+gilly
+pi@gillypi ~/PiSession <span class="nv">$ </span><span class="nb">cd </span>gilly
+pi@gillypi ~/PiSession/gilly <span class="nv">$ </span><span class="nb">pwd</span>
+/home/pi/PiSession/gilly
+pi@gillypi ~/PiSession/gilly <span class="nv">$ </span><span class="nb">cd</span> ../..
+pi@gillypi ~ <span class="nv">$ </span><span class="nb">pwd</span>
+/home/pi
+pi@gillypi ~ <span class="nv">$ </span><span class="nb">cd </span>PiSession/gilly/
+pi@gillypi ~/PiSession/gilly <span class="nv">$ </span>touch info.txt
+pi@gillypi ~/PiSession/gilly <span class="nv">$ </span>ls
+info.txt
+pi@gillypi ~/PiSession/gilly <span class="err">$</span></code></pre></div>
+
 
 <p>Lets review what we have learned so far:</p>
 
@@ -112,9 +136,18 @@ The Raspberry Pi can run various operating systems, most of which are some form 
 
 <p>Finally, try typing <code>python</code> to open the <a href="http://python.org/" title="Python Homepage">Python</a> <a href="http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop" title="REPL on Wikipedia">REPL</a>, which allows you to freely play with the Python language. Try typing in some maths:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>python
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">pi@gillypi ~/PiSession/gilly <span class="nv">$ </span>python
+Python 2.7.3 <span class="o">(</span>default, Jan <span class="m">13</span> 2013, 11:20:46<span class="o">)</span> 
+<span class="o">[</span>GCC 4.6.3<span class="o">]</span> on linux2
+Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
 &gt;&gt;&gt; 1+1
-&gt;&gt;&gt; 2</code></pre></div>
+2
+&gt;&gt;&gt; print<span class="o">(</span><span class="s2">&quot;hello world&quot;</span><span class="o">)</span>
+hello world
+&gt;&gt;&gt; import math
+&gt;&gt;&gt; math.cos<span class="o">(</span>2*math.pi<span class="o">)</span>
+1.0
+&gt;&gt;&gt;</code></pre></div>
 
 
 <p>Now use ctrl-d to log out of Python. Be careful, if you hit it twice you may log out of your SSH connection.</p>
