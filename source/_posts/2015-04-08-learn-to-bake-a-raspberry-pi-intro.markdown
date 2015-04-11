@@ -62,7 +62,7 @@ Lets review what we have learned so far:
 I have installed on my Raspberry Pi a program called [mpc](http://www.musicpd.org/clients/mpc/ "MPC page on MPD website"), Music Player Controller, which I have configured to play Triple J. Try typing `mpc play` or `mpc stop`, or even `mpc volume 80`. *Optional: You can find out more about mpc by typing `man mpc`, or indeed about most commands using the manual command, `man`.* I also have a command line Twitter program to monitor what Triple J is playing now, enter `t timeline` to see what's on.
 
 Finally, try typing `python` to open the [Python](http://python.org/ "Python Homepage") [REPL](http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop "REPL on Wikipedia"), which allows you to freely play with the Python language. Try typing in some maths:
-{% highlight %}
+{% highlight bash %}
 pi@gillypi ~/PiSession/gilly $ python
 Python 2.7.3 (default, Jan 13 2013, 11:20:46) 
 [GCC 4.6.3] on linux2
