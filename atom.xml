@@ -4,7 +4,7 @@
   <title><![CDATA[JCU Robo Club]]></title>
   <link href="http://jcuroboclub.github.io/atom.xml" rel="self"/>
   <link href="http://jcuroboclub.github.io/"/>
-  <updated>2015-04-09T09:47:17+10:00</updated>
+  <updated>2015-04-11T16:57:04+10:00</updated>
   <id>http://jcuroboclub.github.io/</id>
   <author>
     <name><![CDATA[JCU Robo Club]]></name>
@@ -92,7 +92,7 @@ hello world
 &gt;&gt;&gt;</code></pre></div>
 
 
-<p>Now use ctrl-d to log out of Python. Be careful, if you hit it twice you may log out of your SSH connection.</p>
+<p>Now use <code>ctrl-d</code> to log out of Python. Be careful, if you hit it twice you may log out of your SSH connection.</p>
 
 <p>We will now try to do some basic output using Python. On the Pi, this is called GPIO, General Purpose Input/Output. <em>Advanced: Because using input and output could potentially be a security issue, we need to run the commands with privileged access, the same as running as administrator in windows. We do this using the <code>sudo</code> command, meaning super-user do.</em></p>
 
@@ -101,7 +101,7 @@ hello world
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">RPi.GPIO</span> <span class="kn">as</span> <span class="nn">GPIO</span> <span class="c"># load the Raspberry Pi GPIO</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span><span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span><span class="p">)</span> <span class="c"># Set which pin naming convention to use</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="o">&lt;</span><span class="n">pin</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span> <span class="c"># Set &lt;pin&gt; as an output</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="o">&lt;</span><span class="n">pin</span><span class="o">&gt;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span> <span class="c"># Set &lt;pin&gt; high, use 0 for low</span></code></pre></div>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="o">&lt;</span><span class="n">pin</span><span class="o">&gt;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c"># Set &lt;pin&gt; high, use 0 for low</span></code></pre></div>
 
 
 <p>I have connected LEDs to pins 9, 10, 22, 27, 17, 4, 3, 2 from left to right (sorry, the Pi pin numbering is funny, so so is my ordering).</p>
