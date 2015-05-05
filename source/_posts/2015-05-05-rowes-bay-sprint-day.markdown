@@ -5,7 +5,6 @@ date: 2015-05-05 12:20:45 +1000
 comments: true
 categories: Sprint, IoT, Events
 author: Ashley Gillman
-external-url: {{ site.url }}/tcc-sprint-day
 ---
 
 The Rowes Bay Sensor Network Sprint will be held on the 23rd May, 9am-4pm, and will see four teams tackle separate ecosystems at the Rowes Bay Sustainability Education Centre.
