@@ -4,7 +4,7 @@
   <title><![CDATA[JCU Robo Club]]></title>
   <link href="http://jcuroboclub.github.io/atom.xml" rel="self"/>
   <link href="http://jcuroboclub.github.io/"/>
-  <updated>2015-05-05T12:11:37+10:00</updated>
+  <updated>2015-05-05T12:30:21+10:00</updated>
   <id>http://jcuroboclub.github.io/</id>
   <author>
     <name><![CDATA[JCU Robo Club]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Rowes Bay Sprint Day]]></title>
+    <link href="http://jcuroboclub.github.io/blog/2015/05/05/rowes-bay-sprint-day/"/>
+    <updated>2015-05-05T00:00:00+10:00</updated>
+    <id>http://jcuroboclub.github.io/blog/2015/05/05/rowes-bay-sprint-day</id>
+    <content type="html"><![CDATA[<p>The Rowes Bay Sensor Network Sprint will be held on the 23rd May, 9am-4pm, and will see four teams tackle separate ecosystems at the Rowes Bay Sustainability Education Centre.</p>
+
+<p><img src="http://maps.googleapis.com/maps/api/staticmap?zoom=18&center=-19.2345%2C146.7841&maptype=satellite&markers=icon:http://jcuroboclub.github.io/images/beach12.png%7Cshadow:true%7C-19.2343%2C146.78406&markers=icon:http://jcuroboclub.github.io/images/tree164.png%7Cshadow:true%7C-19.2349%2C146.78345&markers=icon:http://jcuroboclub.github.io/images/grass.png%7Cshadow:true%7C-19.2352%2C146.7833&markers=icon:http://jcuroboclub.github.io/images/sea1.png%7Cshadow:true%7C-19.23455%2C146.7845&size=640x320&scale=2" alt=""></p>
+
+<p>See <a href="http://jcuroboclub.github.io/tcc-sprint-day">here</a> for more information.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Learn to Bake: A Raspberry Pi Intro.]]></title>
