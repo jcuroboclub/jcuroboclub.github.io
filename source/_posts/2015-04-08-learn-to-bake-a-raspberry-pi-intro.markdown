@@ -3,7 +3,7 @@ layout: post
 title: "Learn to Bake: A Raspberry Pi Intro."
 date: 2015-04-08 21:43:01 +1000
 comments: true
-categories: 
+categories: Sessions
 author: Ashley Gillman
 ---
 
@@ -47,7 +47,7 @@ pi@gillypi ~ $ cd PiSession/gilly/
 pi@gillypi ~/PiSession/gilly $ touch info.txt
 pi@gillypi ~/PiSession/gilly $ ls
 info.txt
-pi@gillypi ~/PiSession/gilly $ 
+pi@gillypi ~/PiSession/gilly $
 {% endhighlight %}
 
 Lets review what we have learned so far:
@@ -64,7 +64,7 @@ I have installed on my Raspberry Pi a program called [mpc](http://www.musicpd.or
 Finally, try typing `python` to open the [Python](http://python.org/ "Python Homepage") [REPL](http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop "REPL on Wikipedia"), which allows you to freely play with the Python language. Try typing in some maths:
 {% highlight bash %}
 pi@gillypi ~/PiSession/gilly $ python
-Python 2.7.3 (default, Jan 13 2013, 11:20:46) 
+Python 2.7.3 (default, Jan 13 2013, 11:20:46)
 [GCC 4.6.3] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
 >>> 1+1
@@ -74,7 +74,7 @@ hello world
 >>> import math
 >>> math.cos(2*math.pi)
 1.0
->>> 
+>>>
 {% endhighlight %}
 Now use `ctrl-d` to log out of Python. Be careful, if you hit it twice you may log out of your SSH connection.
 

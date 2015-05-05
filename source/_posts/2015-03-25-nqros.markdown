@@ -3,7 +3,7 @@ layout: post
 title: "NQRoS"
 date: 2015-03-25 13:01:39 +1000
 comments: true
-categories: 
+categories: Events
 ---
 
 The North Queensland Robotic Sumo (NQRoS) competition is a student robotics competition aimed to foster student involvement in robotics, and intelligent systems. The competition focuses on rewarding innovation in sensing and intelligence. Held in Townsville, the competition is not limited to North Queenslanders and aims to involve entrants from across Australia and further.
