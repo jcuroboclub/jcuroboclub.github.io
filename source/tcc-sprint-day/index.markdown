@@ -57,3 +57,10 @@ Do you want to compete? Contact us at jcurobotics@gmail.com
 {% img floatr http://upload.wikimedia.org/wikipedia/commons/a/ab/Internet_of_Things.jpg 200 IoT %}
 ## What is the Internet of Things?
 The Internet of Things (IoT) represents the growing connectivity of smart things, whether these be households, appliances, or even ecosystems. This technology offers new opportunities to study how things interact and learn from them.
+
+### Project completed in association with
+<p class="imgspan" style="height:120px">
+{% img /images/tcc_small.png "Townsville City Council" %}
+{% img /images/jcu-eResearch_small.png "JCU eResearch" %}
+{% img /images/ROBOCLUB_small.png "JCU Robo Club" %}
+</p>
