@@ -13,6 +13,8 @@ As humans continue to modify their environments, there is much we can learn from
 The only way we can learn from nature is to understand it, and the first step is to study it.*
 
 The Rowes Bay Sensor Network Sprint will be held on the 23rd May, 9am-4pm, and will see four teams tackle separate ecosystems at the Rowes Bay Sustainability Education Centre.
+Interested in entering?
+Enter [here](https://www.eventbrite.com.au/e/rowes-bay-sensory-sprint-day-tickets-16871309541).
 
 {% comment %}
 <iframe width=100% height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=18&center=-19.2342%2C146.7841&maptype=satellite&key=AIzaSyDl9VoQCdZ2aaTXzpASLtk355CCh7dAeoQ"></iframe>
