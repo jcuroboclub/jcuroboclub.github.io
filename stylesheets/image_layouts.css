@@ -1,0 +1,28 @@
+.floatr {
+    margin: 10px 0px 10px 10px;
+    float: right;
+}
+
+.floatl {
+    margin: 10px 10px 10px 0px;
+    float: left;
+}
+
+.imgspan {
+    text-align: justify;
+    width: 100%;
+}
+.imgspan > img {
+    width: auto;
+    max-width: 30%;
+    height: 100%;
+    vertical-align: top;
+    display: inline-block;
+    *display: inline;
+    zoom: 1
+}
+.imgspan:after {
+    content: "";
+    width: 100%;
+    display: inline-block;
+}
