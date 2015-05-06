@@ -4,7 +4,7 @@
   <title><![CDATA[JCU Robo Club]]></title>
   <link href="http://jcuroboclub.github.io/atom.xml" rel="self"/>
   <link href="http://jcuroboclub.github.io/"/>
-  <updated>2015-05-06T11:58:09+10:00</updated>
+  <updated>2015-05-06T12:44:45+10:00</updated>
   <id>http://jcuroboclub.github.io/</id>
   <author>
     <name><![CDATA[JCU Robo Club]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Rowes Bay Sprint Day]]></title>
     <link href="http://jcuroboclub.github.io/blog/2015/05/05/rowes-bay-sprint-day/"/>
-    <updated>2015-05-05T12:20:45+10:00</updated>
+    <updated>2015-05-05T00:00:00+10:00</updated>
     <id>http://jcuroboclub.github.io/blog/2015/05/05/rowes-bay-sprint-day</id>
     <content type="html"><![CDATA[<p>The Rowes Bay Sensor Network Sprint will be held on the 23rd May, 9am-4pm, and will see four teams tackle separate ecosystems at the Rowes Bay Sustainability Education Centre.</p>
 
@@ -92,7 +92,7 @@ pi@gillypi ~/PiSession/gilly <span class="err">$</span></code></pre></div>
 <p>Finally, try typing <code>python</code> to open the <a href="http://python.org/" title="Python Homepage">Python</a> <a href="http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop" title="REPL on Wikipedia">REPL</a>, which allows you to freely play with the Python language. Try typing in some maths:</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">pi@gillypi ~/PiSession/gilly <span class="nv">$ </span>python
-Python 2.7.3 <span class="o">(</span>default, Jan <span class="m">13</span> 2013, 11:20:46<span class="o">)</span>
+Python 2.7.3 <span class="o">(</span>default, Jan <span class="m">13</span> 2013, 11:20:46<span class="o">)</span> 
 <span class="o">[</span>GCC 4.6.3<span class="o">]</span> on linux2
 Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
 &gt;&gt;&gt; 1+1
