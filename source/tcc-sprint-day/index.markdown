@@ -13,6 +13,8 @@ As humans continue to modify their environments, there is much we can learn from
 The only way we can learn from nature is to understand it, and the first step is to study it.*
 
 The Rowes Bay Sensor Network Sprint will be held on the 23rd May, 9am-4pm, and will see four teams tackle separate ecosystems at the Rowes Bay Sustainability Education Centre.
+Interested in entering?
+Enter [here](https://www.eventbrite.com.au/e/rowes-bay-sensory-sprint-day-tickets-16871309541).
 
 {% comment %}
 <iframe width=100% height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=18&center=-19.2342%2C146.7841&maptype=satellite&key=AIzaSyDl9VoQCdZ2aaTXzpASLtk355CCh7dAeoQ"></iframe>
@@ -57,3 +59,10 @@ Do you want to compete? Contact us at jcurobotics@gmail.com
 {% img floatr http://upload.wikimedia.org/wikipedia/commons/a/ab/Internet_of_Things.jpg 200 IoT %}
 ## What is the Internet of Things?
 The Internet of Things (IoT) represents the growing connectivity of smart things, whether these be households, appliances, or even ecosystems. This technology offers new opportunities to study how things interact and learn from them.
+
+### Project completed in association with
+<p class="imgspan" style="height:120px">
+{% img /images/tcc_small.png "Townsville City Council" %}
+{% img /images/jcu-eResearch_small.png "JCU eResearch" %}
+{% img /images/ROBOCLUB_small.png "JCU Robo Club" %}
+</p>
