@@ -62,7 +62,7 @@ The Internet of Things (IoT) represents the growing connectivity of smart things
 
 ### Project completed in association with
 <p class="imgspan" style="height:120px">
-{% img no-border images/tcc_small_t.png "Townsville City Council" %}
+{% img no-border /images/tcc_small_t.png "Townsville City Council" %}
 {% img no-border /images/jcu-eResearch_small_t.png "JCU eResearch" %}
 {% img no-border /images/ROBOCLUB_small.png "JCU Robo Club" %}
 {% img no-border /images/ITatJCU_small.png "IT@JCU" %}
