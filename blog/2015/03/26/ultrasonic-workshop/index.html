@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Ultrasonic Workshop - JCU Robo Club</title>
+  <meta name="author" content="JCU Robo Club">
+
+  
+  <meta name="description" content="What is an Ultrasonic Sensor? Ultrasonic sensors, like the HC-SR04, are hobbyist level distance sensors that use an ultrasonic burst of sound, or &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jcuroboclub.github.io/blog/2015/03/26/ultrasonic-workshop/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/image_layouts.css" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="JCU Robo Club" type="application/atom+xml">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900' rel='stylesheet' type='text/css'>
+
+
+
+
+  
+
+  <style>html{background: url(/images/background.png) no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}</style>
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+</hgroup>
+
+</header>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Ultrasonic Workshop</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-03-26T20:32:37+10:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h3>What is an Ultrasonic Sensor?</h3>
+
+<p>Ultrasonic sensors, like the HC-SR04, are hobbyist level distance sensors that use an ultrasonic burst of sound, or ping, to measure the distance to objects around it.
+They are essentially like miniature sonars, as seen on your favourite submarine.
+(Hunt For Red October, anyone?).</p>
+
+<p><img src="/images/ultrasonic/2wire_ultrasonic.png"></p>
+
+<!--more-->
+
+
+<h3>What can it be used for?</h3>
+
+<p>As a distance sensor, they’re best used when trying to measure the distance to something. That something could be, for example, a wall or it could be another robot inside a sumo dohyō. Once the location of the object is known, it’s much easier to target or avoid it.</p>
+
+<h3>How does it work?</h3>
+
+<p>The HC-SR04 requires only two data pins, plus ground and +5V connections. The two data pins are used for a Trigger (which sends the ping out), and the Echo (which measures the return of the ping).</p>
+
+<p><img class="floatl" src="/images/ultrasonic/UltrasonicSensor-Operation.png" width="300">
+The ping is sent via a tiny speaker on the front, at a frequency of 40kHz, well above our range of hearing. When it hits an object, the sound bounces back. A second speaker cone acts as a microphone to measure the returning signal.</p>
+
+<p>Based on how long it takes for the sound wave to return, and equipped with a little bit of physics, we are able to calculate the distance the sound travelled in order to return to us, and hence the distance of the object.</p>
+
+<h3>What are the limitations?</h3>
+
+<p class="imgspan" style="height:250px">
+<img class="floatl" src="/images/ultrasonic/hc-sr04_performance.jpg" title="&#34;50%&#34;" alt="&#34;50%&#34;">
+<img class="floatr" src="/images/ultrasonic/SensorSignalDeflection.png" width="250">
+</p>
+
+
+<p>Because the system relies on reflected sound, harder objects will return more of the sound burst, whilst softer objects will absorb more of it. (Can this be used to your advantage?).</p>
+
+<p>The system relies on at least part of the soundwave being reflected back, it is only effective for a defined window (about ±15°), with best results obtained around the 0° mark. Similarly, at least part of the object must be facing towards the object in order to provide a surface capable of reflecting the ping wave.</p>
+
+<h3>How do I use it?</h3>
+
+<p><a href="/images/ultrasonic/2wire_ultrasonic.png" title="Full Size"><img class="floatr" src="/images/ultrasonic/2wire_ultrasonic.png" width="300"></a></p>
+
+<ol>
+<li>Connect the Trigger and Echo pins, as per the schematic.</li>
+<li>Connect the ground pin</li>
+<li>Connect the +5V pin</li>
+<li>Connect and program your Arduino</li>
+<li>Open the Serial Monitor (terminal / console viewer)</li>
+<li>Measure distances. Win!</li>
+</ol>
+
+
+<figure class='code'><figcaption><span>&#8220;Ultrasonic Test Code&#8221; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="cm">/*</span>
+</span><span class='line'><span class="cm"> Robo Club Workshop - Ultrasonics</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm"> This simple code will allow you to measure the distance</span>
+</span><span class='line'><span class="cm"> to an object using your HC-SR04 Ultrasonic distance sensor</span>
+</span><span class='line'><span class="cm"> and your Arduino.</span>
+</span><span class='line'><span class="cm">*/</span>
+</span><span class='line'>
+</span><span class='line'><span class="cp">#define trigPin 12 </span><span class="c1">// blue</span>
+</span><span class='line'><span class="cp">#define echoPin 11 </span><span class="c1">// green</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span> <span class="p">(</span><span class="mi">9600</span><span class="p">);</span>              <span class="c1">// allows terminal access</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">trigPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>         <span class="c1">// set up pin to trigger</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">echoPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>          <span class="c1">// set up pin to receive echo</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">duration</span><span class="p">,</span> <span class="n">distance</span><span class="p">;</span>           <span class="c1">// set up variables</span>
+</span><span class='line'>  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">trigPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>      <span class="c1">// start of trigger sequence</span>
+</span><span class='line'>  <span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>          <span class="c1">// delay 1ms</span>
+</span><span class='line'>  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">trigPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>       <span class="c1">// complete trigger sequence</span>
+</span><span class='line'>  <span class="n">duration</span> <span class="o">=</span> <span class="n">pulseIn</span><span class="p">(</span><span class="n">echoPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>  <span class="c1">// see: http://arduino.cc/en/Reference/pulseIn</span>
+</span><span class='line'>  <span class="n">distance</span> <span class="o">=</span> <span class="p">(</span><span class="n">duration</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">29.1</span><span class="p">;</span>  <span class="c1">// calculate distance from time</span>
+</span><span class='line'>                                   <span class="c1">// Divide the time in half (because</span>
+</span><span class='line'>                                   <span class="c1">// the pulse travelled to the object</span>
+</span><span class='line'>                                   <span class="c1">// AND back again.</span>
+</span><span class='line'>                                   <span class="c1">// Then divide the time by 29.1 microseconds/cm</span>
+</span><span class='line'>                                   <span class="c1">// (the speed of sound).</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="n">distance</span> <span class="o">&gt;=</span> <span class="mi">200</span> <span class="o">||</span> <span class="n">distance</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">){</span>  <span class="c1">// remove out-of-bounds readings</span>
+</span><span class='line'>    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Out of range&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">else</span> <span class="p">{</span>                           <span class="c1">// print distance if valid</span>
+</span><span class='line'>    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">distance</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot; cm&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>                      <span class="c1">// wait before repeating process</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>More information:</h3>
+
+<p>The datasheet is available in the project folder <a href="https://drive.google.com/open?id=0B5CywTjAZK_nQ25HWFlFRDh0VU0&amp;authuser=0">here</a>.</p>
+
+<h3>Advanced:</h3>
+
+<p>One problem with this code is that pulsein() will wait for the response, up to a certain amount of time. But what happens while the code is waiting? Nothing!
+Advanced student may like to see the <a href="https://code.google.com/p/arduino-new-ping/">NewPing library</a>, which attempts to solve this issue.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Chris Roberts, Ashley Gillman</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-03-26T20:32:37+10:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/sessions/'>sessions</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jcuroboclub.github.io/blog/2015/03/26/ultrasonic-workshop/" data-via="jcuroboclub" data-counturl="http://jcuroboclub.github.io/blog/2015/03/26/ultrasonic-workshop/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/03/25/nqros/" title="Previous Post: NQRoS">&laquo; NQRoS</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2015/04/08/learn-to-bake-a-raspberry-pi-intro/" title="Next Post: Learn to Bake: A Raspberry Pi Intro.">Learn to Bake: A Raspberry Pi Intro. &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section id="titles">
+  <a href="http://jcuroboclub.github.io" title="JCU Robo Club"><img id="logo" src="http://jcuroboclub.github.io/images/ROBOCLUB.png" /></a>
+  <h3 id="site_subtitle">JCU&#8217;s robotics and electronics club</h3>
+</section>
+
+<section id="menu">
+  <ul>
+    <li><i class="fa fa-home fa-lg"></i><a href="http://jcuroboclub.github.io"> Home </a></li>
+    <li><i class="fa fa-calendar fa-lg"></i><a href="http://jcuroboclub.github.io/blog/archives/"> Archives </a></li>
+    <li><i class="fa fa-user fa-lg"></i><a href="http://jcuroboclub.github.io/about/"> About </a></li>
+    <li><i class="fa fa-heart fa-lg"></i><a href="http://jcuroboclub.github.io/sponsorship/"> Sponsorship </a></li>
+  </ul>
+</section>
+
+<section id="social">
+  
+
+  
+
+  
+
+  
+    <a href="https://github.com/jcuroboclub" title="jcuroboclub"><i class="fa fa-github fa-2x"></i></a>
+  
+
+  
+
+  
+    <a href="https://facebook.com/RoboClubJCU" title="RoboClubJCU"><i class="fa fa-facebook fa-2x"></i></a>
+  
+
+  
+    <a href="https://twitter.com/jcuroboclub" title="jcuroboclub"><i class="fa fa-twitter fa-2x"></i></a>
+  
+</section>
+
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/05/05/rowes-bay-sprint-day/">Rowes Bay Sprint Day</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/04/08/learn-to-bake-a-raspberry-pi-intro/">Learn to Bake: A Raspberry Pi Intro.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/03/26/ultrasonic-workshop/">Ultrasonic Workshop</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/03/25/nqros/">NQRoS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/03/24/welcome/">Welcome</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section class="twitterOct">
+  <h1 style="margin-bottom: 0.4em"> Tweets </h1>
+  <a class="twitter-timeline"
+	 data-dnt="true" href="https://twitter.com/jcuroboclub" 
+     data-widget-id="580270778760859648">
+     
+     Tweets by @jcuroboclub
+  </a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+
+<section>
+  <h1>   We support 
+</h1>
+  <span>
+    <a href='http://arduino.cc'><img style='padding: .5em; margin: .5em;' src='/images/stickers/arduino.cc.png'></a><a href='http://jcu.edu.au'><img style='padding: .5em; margin: .5em;' src='/images/stickers/jcu.edu.au.png'></a><a href='http://opensource.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/opensource.org.png'></a><a href='http://python.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/python.org.png'></a><a href='http://raspberrypi.org'><img style='padding: .5em; margin: .5em;' src='/images/stickers/raspberrypi.org.png'></a><a href='http://www.robotgear.com.au'><img style='padding: .5em; margin: .5em;' src='/images/stickers/www.robotgear.com.au.png'></a><a href='http://www.tei.com.au'><img style='padding: .5em; margin: .5em;' src='/images/stickers/www.tei.com.au.png'></a>
+  </span>
+</section>
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jcuroboclub">@jcuroboclub</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jcuroboclub',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - JCU Robo Club -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

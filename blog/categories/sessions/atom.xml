@@ -4,7 +4,7 @@
   <title><![CDATA[Category: sessions | JCU Robo Club]]></title>
   <link href="http://jcuroboclub.github.io/blog/categories/sessions/atom.xml" rel="self"/>
   <link href="http://jcuroboclub.github.io/"/>
-  <updated>2015-05-07T20:00:06+10:00</updated>
+  <updated>2015-05-07T22:20:42+10:00</updated>
   <id>http://jcuroboclub.github.io/</id>
   <author>
     <name><![CDATA[JCU Robo Club]]></name>
@@ -105,6 +105,153 @@ I have connected LEDs to pins 9, 10, 22, 27, 17, 4, 3, 2 from left to right (sor
 <p>Those wanting to go further should consider purchasing a Raspberry Pi. The units are very cheap, at $35 for a Raspberry Pi B+, or $45 for a Raspberry Pi 2. Of course, you will still need an SD card, keyboard, monitor, HDMI cable, USB micro cable, and a case, but many of these items you may already have lying around. The system itself is quite simple to learn, due to an abundance of material. Check out <a href="https://learn.adafruit.com/category/raspberry-pi" title="Learn Raspberry Pi at Adafruit">Adafruit&rsquo;s guides</a>.</p>
 
 <p>That is about it for this session. We have seen how to connect to the Pi, how to navigate through the file system using command line, and how to run programs. These are the basic tools required to get started with the Pi. of course, if you have your own Pi, you can hook up a keyboard and monitor and connect directly. You can even connect a mouse and use a regular desktop environment. However, harnessing the power of the command-line unlocks the power of the Pi.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ultrasonic Workshop]]></title>
+    <link href="http://jcuroboclub.github.io/blog/2015/03/26/ultrasonic-workshop/"/>
+    <updated>2015-03-26T20:32:37+10:00</updated>
+    <id>http://jcuroboclub.github.io/blog/2015/03/26/ultrasonic-workshop</id>
+    <content type="html"><![CDATA[<h3>What is an Ultrasonic Sensor?</h3>
+
+<p>Ultrasonic sensors, like the HC-SR04, are hobbyist level distance sensors that use an ultrasonic burst of sound, or ping, to measure the distance to objects around it.
+They are essentially like miniature sonars, as seen on your favourite submarine.
+(Hunt For Red October, anyone?).</p>
+
+<p><img src="/images/ultrasonic/2wire_ultrasonic.png"></p>
+
+<!--more-->
+
+
+<h3>What can it be used for?</h3>
+
+<p>As a distance sensor, they’re best used when trying to measure the distance to something. That something could be, for example, a wall or it could be another robot inside a sumo dohyō. Once the location of the object is known, it’s much easier to target or avoid it.</p>
+
+<h3>How does it work?</h3>
+
+<p>The HC-SR04 requires only two data pins, plus ground and +5V connections. The two data pins are used for a Trigger (which sends the ping out), and the Echo (which measures the return of the ping).</p>
+
+<p><img class="floatl" src="/images/ultrasonic/UltrasonicSensor-Operation.png" width="300">
+The ping is sent via a tiny speaker on the front, at a frequency of 40kHz, well above our range of hearing. When it hits an object, the sound bounces back. A second speaker cone acts as a microphone to measure the returning signal.</p>
+
+<p>Based on how long it takes for the sound wave to return, and equipped with a little bit of physics, we are able to calculate the distance the sound travelled in order to return to us, and hence the distance of the object.</p>
+
+<h3>What are the limitations?</h3>
+
+<p class="imgspan" style="height:250px">
+<img class="floatl" src="/images/ultrasonic/hc-sr04_performance.jpg" title="&#34;50%&#34;" alt="&#34;50%&#34;">
+<img class="floatr" src="/images/ultrasonic/SensorSignalDeflection.png" width="250">
+</p>
+
+
+<p>Because the system relies on reflected sound, harder objects will return more of the sound burst, whilst softer objects will absorb more of it. (Can this be used to your advantage?).</p>
+
+<p>The system relies on at least part of the soundwave being reflected back, it is only effective for a defined window (about ±15°), with best results obtained around the 0° mark. Similarly, at least part of the object must be facing towards the object in order to provide a surface capable of reflecting the ping wave.</p>
+
+<h3>How do I use it?</h3>
+
+<p><a href="/images/ultrasonic/2wire_ultrasonic.png" title="Full Size"><img class="floatr" src="/images/ultrasonic/2wire_ultrasonic.png" width="300"></a></p>
+
+<ol>
+<li>Connect the Trigger and Echo pins, as per the schematic.</li>
+<li>Connect the ground pin</li>
+<li>Connect the +5V pin</li>
+<li>Connect and program your Arduino</li>
+<li>Open the Serial Monitor (terminal / console viewer)</li>
+<li>Measure distances. Win!</li>
+</ol>
+
+
+<p><figure class='code'><figcaption><span>&ldquo;Ultrasonic Test Code&rdquo; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="cm">/*</span>
+</span><span class='line'><span class="cm"> Robo Club Workshop - Ultrasonics&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">&lt;p&gt; This simple code will allow you to measure the distance</span>
+</span><span class='line'><span class="cm"> to an object using your HC-SR04 Ultrasonic distance sensor</span>
+</span><span class='line'><span class="cm"> and your Arduino.</span>
+</span><span class='line'><span class="cm">*/</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">define</span> <span class="n">trigPin</span> <span class="mi">12</span> <span class="c1">// blue&lt;/h1&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">define</span> <span class="n">echoPin</span> <span class="mi">11</span> <span class="c1">// green&lt;/h1&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">void</span> <span class="n">setup</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span> <span class="p">(</span><span class="mi">9600</span><span class="p">);</span>              <span class="c1">// allows terminal access</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">trigPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>         <span class="c1">// set up pin to trigger</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">echoPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>          <span class="c1">// set up pin to receive echo</span>
+</span><span class='line'><span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">void</span> <span class="n">loop</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">duration</span><span class="p">,</span> <span class="n">distance</span><span class="p">;</span>           <span class="c1">// set up variables</span>
+</span><span class='line'>  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">trigPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>      <span class="c1">// start of trigger sequence</span>
+</span><span class='line'>  <span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>          <span class="c1">// delay 1ms</span>
+</span><span class='line'>  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">trigPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>       <span class="c1">// complete trigger sequence</span>
+</span><span class='line'>  <span class="n">duration</span> <span class="o">=</span> <span class="n">pulseIn</span><span class="p">(</span><span class="n">echoPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>  <span class="c1">// see: &lt;a href=&quot;http://arduino.cc/en/Reference/pulseIn&quot;&gt;http://arduino.cc/en/Reference/pulseIn&lt;/a&gt;</span>
+</span><span class='line'>  <span class="n">distance</span> <span class="o">=</span> <span class="p">(</span><span class="n">duration</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">29.1</span><span class="p">;</span>  <span class="c1">// calculate distance from time</span>
+</span><span class='line'>                                   <span class="c1">// Divide the time in half (because</span>
+</span><span class='line'>                                   <span class="c1">// the pulse travelled to the object</span>
+</span><span class='line'>                                   <span class="c1">// AND back again.</span>
+</span><span class='line'>                                   <span class="c1">// Then divide the time by 29.1 microseconds/cm</span>
+</span><span class='line'>                                   <span class="c1">// (the speed of sound).</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="n">distance</span> <span class="o">&gt;=</span> <span class="mi">200</span> <span class="o">||</span> <span class="n">distance</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=</span> <span class="mi">0</span><span class="p">){</span>  <span class="c1">// remove out-of-bounds readings</span>
+</span><span class='line'>    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">Out</span> <span class="n">of</span> <span class="n">range</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">else</span> <span class="p">{</span>                           <span class="c1">// print distance if valid</span>
+</span><span class='line'>    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">distance</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span> <span class="n">cm</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>                      <span class="c1">// wait before repeating process</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<h3>More information:</h3>
+
+<p>The datasheet is available in the project folder <a href="https://drive.google.com/open?id=0B5CywTjAZK_nQ25HWFlFRDh0VU0&amp;authuser=0">here</a>.</p>
+
+<h3>Advanced:</h3>
+
+<p>One problem with this code is that pulsein() will wait for the response, up to a certain amount of time. But what happens while the code is waiting? Nothing!
+Advanced student may like to see the <a href="https://code.google.com/p/arduino-new-ping/">NewPing library</a>, which attempts to solve this issue.</p>
 ]]></content>
   </entry>
   
