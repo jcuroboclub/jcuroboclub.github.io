@@ -4,7 +4,7 @@
   <title><![CDATA[Category: events | JCU Robo Club]]></title>
   <link href="http://jcuroboclub.github.io/blog/categories/events/atom.xml" rel="self"/>
   <link href="http://jcuroboclub.github.io/"/>
-  <updated>2015-05-14T20:54:42+10:00</updated>
+  <updated>2015-05-18T22:23:49+10:00</updated>
   <id>http://jcuroboclub.github.io/</id>
   <author>
     <name><![CDATA[JCU Robo Club]]></name>
@@ -62,7 +62,14 @@ This collaboration will be sure to make these events all the more interesting, s
     <link href="http://jcuroboclub.github.io/blog/2015/03/25/nqros/"/>
     <updated>2015-03-25T13:01:39+10:00</updated>
     <id>http://jcuroboclub.github.io/blog/2015/03/25/nqros</id>
-    <content type="html"><![CDATA[<p>The North Queensland Robotic Sumo (NQRoS) competition is a student robotics competition aimed to foster student involvement in robotics, and intelligent systems. The competition focuses on rewarding innovation in sensing and intelligence. Held in Townsville, the competition is not limited to North Queenslanders and aims to involve entrants from across Australia and further.</p>
+    <content type="html"><![CDATA[<p class="imgspan" style="height:70px">
+<img class="no-border" src="/images/jcu_small_t.png" title="&#34;JCU&#34;" alt="&#34;JCU&#34;">
+<img class="no-border" src="/images/TEi_small.png" title="&#34;TEi&#34;" alt="&#34;TEi&#34;">
+<img class="no-border" src="/images/ieee_small_t.png" title="&#34;IEEE&#34;" alt="&#34;IEEE&#34;">
+</p>
+
+
+<p>The North Queensland Robotic Sumo (NQRoS) competition is a student robotics competition aimed to foster student involvement in robotics, and intelligent systems. The competition focuses on rewarding innovation in sensing and intelligence. Held in Townsville, the competition is not limited to North Queenslanders and aims to involve entrants from across Australia and further.</p>
 
 <p><img class="no-border" src="/images/mod_zumo.png" title="&ldquo;Sumo Zumo&rdquo;" ></p>
 
@@ -86,7 +93,7 @@ This collaboration will be sure to make these events all the more interesting, s
 </ul>
 
 
-<p>The definition of &ldquo;robotics industry &#8220;is deemed by the event organizers in order to keep within the spirit of the competition of non-professionals.
+<p>The definition of &ldquo;robotics industry "is deemed by the event organizers in order to keep within the spirit of the competition of non-professionals.
 There may be no more than 3 entrants representing a participating organisation. Please RSVP by 22nd April to <a href="mailto:ashley.gillman@my.jcu.edu.au">Ashley Gillman</a> to enter.</p>
 
 <h3>Competition Format</h3>
